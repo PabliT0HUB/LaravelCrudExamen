@@ -1,0 +1,23 @@
+1. Se crea el proyecto con JetStream.
+
+2. En App/Providers/AppServiceProvider.php  hay que configurar al principio del archivo 
+agregando "use Illuminate\Support\Facades\Schema;" y también y en el objeto/función "boot" 
+agregar "Schema::defaultStringLength(191);"
+
+3. Configuramos la base de datos y mandamos las migraciones con PhP Artisan Migrate
+
+4. Creamos el Modelo con: php artisan make:model PacientesModel -m.
+
+5. Creamos el Controlador con : php artisan make:controller PacientesController --resource.
+
+6. En Routes/web.php agregar "Route::get('/dash', 'App\Http\Controllers\PacientesController@index');"
+
+7. Agregamos en el archivo de migraciones que se creó al hacer el modelo los atributos de la tabla pacientes
+y los enviamos con php artisan migrate
+
+
+
+
+
+npm install
+npm run production
